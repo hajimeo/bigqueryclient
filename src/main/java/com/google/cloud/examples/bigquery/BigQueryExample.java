@@ -14,6 +14,7 @@
  * limitations under the License.
  *
  *
+ * @see https://raw.githubusercontent.com/googleapis/google-cloud-java/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java
  * @see https://cloud.google.com/bigquery/docs/tables
  */
 
