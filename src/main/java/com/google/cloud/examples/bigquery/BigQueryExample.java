@@ -211,6 +211,7 @@ public class BigQueryExample {
         @Override
         public void run(BigQuery bigquery, DatasetId datasetId) {
             for (Table table : bigquery.listTables(datasetId).iterateAll()) {
+                System.out.println("Table name: "+ table.getTableId().getTable());
                 System.out.println(table);
             }
         }
