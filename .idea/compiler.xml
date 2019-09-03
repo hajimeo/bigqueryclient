@@ -10,8 +10,5 @@
         <module name="bigqueryclient" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="bigqueryclient" target="7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
