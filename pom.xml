@@ -23,24 +23,19 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.1</version>
+                <!-- https://www.baeldung.com/executable-jar-with-maven -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
-                    <!-- Run shade goal on package phase -->
                     <execution>
-                        <phase>package</phase>
                         <goals>
-                            <goal>shade</goal>
+                            <goal>repackage</goal>
                         </goals>
                         <configuration>
-                            <transformers>
-                                <!-- add Main-Class to manifest file -->
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.google.cloud.examples.bigquery.BigQueryExample</mainClass>
-                                </transformer>
-                            </transformers>
+                            <classifier>spring-boot</classifier>
+                            <mainClass>
+                                com.google.cloud.examples.bigquery.BigQueryExample
+                            </mainClass>
                         </configuration>
                     </execution>
                 </executions>
@@ -53,6 +48,11 @@
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-bigquery</artifactId>
             <version>1.87.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
         </dependency>
     </dependencies>
 </project>
