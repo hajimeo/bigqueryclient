@@ -10,12 +10,13 @@ steps:
     targetType: 'inline'
     script: |
       ln -sfh /tmp/requirements.txt ./requirements.txt
-      ln -sfh /Users/hosako/Desktop/temp/jars/jakarta.annotation-api-similar-1.3.5.jar ./jakarta.annotation-api-similar-1.3.5.jar
+      cp -f -v /Users/hosako/Desktop/temp/jars/jakarta.annotation-api-similar-1.3.5.jar ./jakarta.annotation-api-similar-1.3.5.jar
       ln -sfh /Users/hosako/Desktop/temp/jars/jakarta.annotation-api-1.3.5.jar ./jakarta.annotation-api-1.3.5.jar
 - task: NexusIqPipelineTask@2
   inputs:
     nexusIqService: 'local_iq'
     applicationId: 'sandbox-application'
+    scanTargets: '**/*'
     stage: 'stage'
     enableDebugLogging: true
 # Build your Java project and run tests with Apache Maven.
