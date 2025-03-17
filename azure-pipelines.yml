@@ -11,9 +11,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      cat << EOF > ./requirements.txt
-      mediapipe==0.10.14
-      EOF
+      ln -sf /tmp/requirements.txt ./requirements.txt
 - task: NexusIqPipelineTask@2
   inputs:
     nexusIqService: 'local_iq'
