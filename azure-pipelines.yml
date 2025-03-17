@@ -11,7 +11,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      ln -sf /tmp/requirements.txt ./requirements.txt
+      ln -sfh /tmp/requirements.txt ./requirements.txt
 - task: NexusIqPipelineTask@2
   inputs:
     nexusIqService: 'local_iq'
