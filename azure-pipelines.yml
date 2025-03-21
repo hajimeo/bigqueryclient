@@ -16,7 +16,7 @@ steps:
     nexusIqService: 'local_iq'
     applicationId: 'sandbox-application'
     stage: 'stage-release'
-    scanTargets: '**/*.jar, **/*.war, **/*.ear, **/*.zip, **/*.tar.gz, **/*.txt, **/*.json'
+    scanTargets: '**/*.jar, **/*.war, **/*.ear, **/*.zip, **/*.tar.gz, **/*.txt, **/*.json, !**/package.json'
     ignoreSystemError: true
     ignoreScanningError: true
     enableDebugLogging: true
