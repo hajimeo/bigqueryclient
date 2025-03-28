@@ -20,6 +20,7 @@ steps:
     scanTargets: '**/*.jar, **/*.war, **/*.ear, **/*.zip, **/*.tar.gz, **/*.txt, **/*.json, !**/package.json'
     ignoreSystemError: false
     ignoreScanningError: false
+    enableCallflow: true
     enableDebugLogging: true
 - task: Bash@3
   inputs:
