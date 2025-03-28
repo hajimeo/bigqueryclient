@@ -10,7 +10,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      echo "{" > package.json
+      #echo "{" > package.json
       ln -sfh /Users/hosako/Desktop/temp/jars/abbot-1.4.0.jar ./abbot-1.4.0.jar
 - task: NexusIqPipelineTask@2
   inputs:
@@ -18,8 +18,8 @@ steps:
     applicationId: 'sandbox-application'
     stage: 'stage-release'
     scanTargets: '**/*.jar, **/*.war, **/*.ear, **/*.zip, **/*.tar.gz, **/*.txt, **/*.json, !**/package.json'
-    ignoreSystemError: true
-    ignoreScanningError: true
+    ignoreSystemError: false
+    ignoreScanningError: false
     enableDebugLogging: true
 - task: Bash@3
   inputs:
